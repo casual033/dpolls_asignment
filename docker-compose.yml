@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+
+  # Database
+  dpolls-database-mongo:
+    image: mongo
+    networks: 
+      - dpolls-db-network
+    ports:
+      - "27017:27017"
+    container_name: "dpolls-db-mongo"
+
+networks:
+  dpolls-db-network:
+    name: dpolls-db-main-network
