@@ -1,11 +1,8 @@
 package com.finbit.dpollsapp.domain;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class Initiator {
 
     private String name;
