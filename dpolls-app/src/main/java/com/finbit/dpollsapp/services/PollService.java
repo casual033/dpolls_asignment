@@ -5,6 +5,7 @@ import com.finbit.dpollsapp.dto.PollSearchDTO;
 import com.finbit.dpollsapp.repositories.PollRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -24,9 +25,9 @@ public class PollService {
 
         } else if(pollSearchDTO.isNameSearchTermSet()) {
 
-            return pollRepository.findByInitiator_Email(pollSearchDTO.getUserEmail());
+            return pollRepository.findByInitiator_Name(pollSearchDTO.getUserName());
         }
 
-        return pollRepository.findAll();
+        return Collections.emptyList();
     }
 }

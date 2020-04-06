@@ -16,9 +16,9 @@ public class Poll {
     private String adminKey;
     private Long latestChange;
     private Long initiated;
-    private Integer participantCount;
+    private Integer participantsCount;
     private String type;
-    private String preferenceType;
+    private String preferencesType;
     private String state;
     private String locale;
     private String title;
