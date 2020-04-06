@@ -20,6 +20,7 @@ public class PollService {
     @Transactional(readOnly = true)
     public List<Poll> searchPolls(PollSearchDTO pollSearchDTO) {
 
-        return pollRepository.searchPolls(pollSearchDTO.getSearchTerm(), pollSearchDTO.getAfterDate());
+        return pollRepository.searchPolls(pollSearchDTO.getSearchTerm(),
+                pollSearchDTO.getAfterDate(), pollSearchDTO.getBeforeDate());
     }
 }

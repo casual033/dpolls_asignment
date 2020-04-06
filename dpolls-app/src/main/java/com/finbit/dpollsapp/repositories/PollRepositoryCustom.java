@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface PollRepositoryCustom {
 
-    List<Poll> searchPolls(String searchTerms, LocalDate afterDate);
+    List<Poll> searchPolls(String searchTerm, LocalDate afterDate, LocalDate beforeDate);
 }

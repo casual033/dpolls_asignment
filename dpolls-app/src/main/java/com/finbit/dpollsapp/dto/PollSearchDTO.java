@@ -9,4 +9,5 @@ public class PollSearchDTO {
 
     private String searchTerm;
     private LocalDate afterDate;
+    private LocalDate beforeDate;
 }
