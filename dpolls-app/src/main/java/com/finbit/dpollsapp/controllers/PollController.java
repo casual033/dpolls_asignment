@@ -26,7 +26,7 @@ public class PollController {
     @RequestMapping(path = "/polls")
     public List<PollDTO> findUsersPolls(@RequestBody PollSearchDTO pollSearchDTO) {
 
-        List<Poll> polls = pollService.findPolls(pollSearchDTO);
+        List<Poll> polls = pollService.searchPolls(pollSearchDTO);
         return polls.stream().map(pollMapper::mapPollToDto).collect(Collectors.toList());
     }
 }

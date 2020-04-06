@@ -16,8 +16,6 @@ public class PollMapper {
 
     public PollDTO mapPollToDto(Poll poll) {
 
-        PollDTO dto = modelMapper.map(poll, PollDTO.class);
-
-        return dto;
+        return modelMapper.map(poll, PollDTO.class);
     }
 }

@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
-public interface PollRepository extends MongoRepository<Poll, String> {
+public interface PollRepository extends MongoRepository<Poll, String>, PollRepositoryCustom {
 
     List<Poll> findByInitiator_Name(String name);
 

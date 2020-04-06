@@ -4,8 +4,8 @@ import com.finbit.dpollsapp.domain.Poll;
 import com.finbit.dpollsapp.dto.PollSearchDTO;
 import com.finbit.dpollsapp.repositories.PollRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -17,17 +17,9 @@ public class PollService {
         this.pollRepository = pollRepository;
     }
 
-    public List<Poll> findPolls(PollSearchDTO pollSearchDTO) {
+    @Transactional(readOnly = true)
+    public List<Poll> searchPolls(PollSearchDTO pollSearchDTO) {
 
-        if(pollSearchDTO.isEmailSearchTermSet()) {
-
-            return pollRepository.findByInitiator_Email(pollSearchDTO.getUserEmail());
-
-        } else if(pollSearchDTO.isNameSearchTermSet()) {
-
-            return pollRepository.findByInitiator_Name(pollSearchDTO.getUserName());
-        }
-
-        return Collections.emptyList();
+        return pollRepository.searchPolls(pollSearchDTO.getSearchTerm(), pollSearchDTO.getAfterDate());
     }
 }
