@@ -10,6 +10,21 @@ services:
       - "27017:27017"
     container_name: "dpolls-db-mongo"
 
+  # Api
+  dpolls-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile.api
+    networks: 
+      - dpolls-db-network
+    expose:
+      - "8080"
+    ports:
+      - 8080:8080
+    container_name: "dpolls-api"
+    environment:
+       - "SPRING_PROFILES_ACTIVE=docker"
+
 networks:
   dpolls-db-network:
     name: dpolls-db-main-network
