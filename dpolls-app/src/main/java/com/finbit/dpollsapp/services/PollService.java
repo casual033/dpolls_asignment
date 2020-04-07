@@ -20,6 +20,10 @@ public class PollService {
     @Transactional(readOnly = true)
     public List<Poll> searchPolls(PollSearchDTO pollSearchDTO) {
 
+        if(pollSearchDTO.getSearchTerm() == null || pollSearchDTO.getSearchTerm().isEmpty()) {
+            throw new IllegalArgumentException("Search term is required!");
+        }
+
         return pollRepository.searchPolls(pollSearchDTO.getSearchTerm(),
                 pollSearchDTO.getAfterDate(), pollSearchDTO.getBeforeDate());
     }

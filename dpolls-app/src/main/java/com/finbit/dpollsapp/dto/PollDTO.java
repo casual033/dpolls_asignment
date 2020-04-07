@@ -47,7 +47,7 @@ public class PollDTO implements Serializable {
     private Location location;
 
     @Data
-    private static class Initiator {
+    public static class Initiator {
 
         private String name;
         private String email;
