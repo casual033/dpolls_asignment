@@ -4,6 +4,8 @@ This is a simple api for fetching user polls. Choice of technologies is based on
 
   - MongoDB - it gives us flexibility and ease of importing existing json to db
   - Java Srping Boot - it gives us ease of configuration and connectivity
+  
+Everything was kept as simple as possible to stay within time limits. In other circumstances more time should be spent analyzing data model and modeling the database, but this depends also on other requirements in the project. Also, test coverage, exception handling and use of abstracions could be improved.
 
 # How to run
 
